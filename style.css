@@ -1,0 +1,114 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.filter-buttons {
+  margin: 20px 0;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+  background-color: #000;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.navigation button {
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  transform: translateY(-50%);
+}
+
+.navigation button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navigation button:first-child {
+  left: 0;
+}
+
+.navigation button:last-child {
+  right: 0;
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-content {
+    width: 95%;
+  }
+}
